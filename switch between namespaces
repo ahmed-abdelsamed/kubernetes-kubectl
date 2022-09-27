@@ -1,0 +1,11 @@
+### list of namespace and switch between namespaces
+$kubens
+....
+
+$kubectl create ns mongo
+
+$kubens mongo
+'
+Context "iam-root-access@...." modified.
+Active namespace is "mongo"
+'

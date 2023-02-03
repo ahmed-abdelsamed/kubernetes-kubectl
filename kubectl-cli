@@ -1,13 +1,16 @@
-if you manage to add or EIP or VIP to your node then you can attach to the EXTERNAL-IP of your TYPE=LoadBalancer in k8 cluster, for example attaching the EIP/VIP address to the node 172.10.2.10
+if you manage to add or EIP or VIP to your node then you can attach to the EXTERNAL-IP of your TYPE=LoadBalancer in k8 cluster, 
+for example attaching the EIP/VIP address to the node 172.10.2.10.
 
-root@kube-master:/home/ansible# kubectl patch svc lb-service  -p '{"spec": {"type": "LoadBalancer", "externalIPs":["172.10.2.10"]}}'
 
-service/lb-service patched
+
+root@kube-master:/home/ansible# kubectl patch svc helloworld-service  -p '{"spec": {"type": "LoadBalancer", "externalIPs":["172.10.2.10"]}}'
+
+service/helloworld-service patched
 
 Display information about the Service:
-root@kube-master:/home/ansible# kubectl get services lb-service
+root@kube-master:/home/ansible# kubectl get services helloworkd-service
 NAME       TYPE          CLUSTER-IP   EXTERNAL-IP PORT(S)           AGE
-lb-service LoadBalancer 10.102.7.76  172.10.2.10 8080:31031/TCP    10m
+helloworkd-service LoadBalancer 10.102.7.76  172.10.2.10 8080:31031/TCP    10m
 
 #so you can now access the service at that IP address
 
